@@ -5,21 +5,21 @@ const Employee = require("./Employee");
 // add class and extend to employee
 
 class Engineer extends Employee {
-    constructor ({ name, email, id, githubUsername });
-
-
-{
-    this githubUsername = githubUsername;
+  constructor({ name, email, id, githubUsername }) {
+    {
+      super({ name, id, email });
+    }
+    this.githubUsername = githubUsername;
     this.role = "Engineer";
-}
+  }
 
-generateUsername() {
+  generateUsername() {
     return this.githubUsername;
-}
+  }
 
-// render the HTML
+  // render the HTML
 
-generateEngineerHTML() {
+  generateEngineerHTML() {
     return `<div class="card-body text-center">
         <h5 class="card-title">${this.name}</h5>
         <h6>Manager</h6>
@@ -31,8 +31,8 @@ generateEngineerHTML() {
             <li class="list-group-item">Github</li>
             <a href="https://github.com/${this.githubUsername}" target="_blank" class="card-link">https://github.com/${this.githubUsername}</a> 
     </ul>
-</div>`
-}
+</div>`;
+  }
 }
 
 module.exports = Engineer;
