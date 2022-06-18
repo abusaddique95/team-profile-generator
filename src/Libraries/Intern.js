@@ -14,7 +14,7 @@ class Intern extends Employee {
   }
 
   generateSchool() {
-    return this.generateSchool;
+    return this.school;
   }
 
   // render the HTML
