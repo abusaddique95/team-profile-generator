@@ -6,7 +6,7 @@ describe("Intern", () => {
     const email = "Bob@gmail.com";
     const id = "1";
     const school = "university of wolverhampton";
-    engineer = new Intern(name, id, email);
+    intern = new Intern(name, id, email);
 
     const expected = Intern;
     const actual = new Intern(name, id, email);
@@ -18,7 +18,7 @@ describe("Intern", () => {
 
     const intern = new Intern(name, id, email);
 
-    const actual = intern.getName;
+    const actual = intern.getName();
 
     expect(actual).toEqual(expected);
   });
@@ -28,7 +28,7 @@ describe("Intern", () => {
 
     const intern = new Intern(name, id, email);
 
-    const actual = intern.getEmail;
+    const actual = intern.getEmail();
 
     expect(actual).toEqual(expected);
   });
@@ -38,7 +38,7 @@ describe("Intern", () => {
 
     const intern = new Intern(name, id, email);
 
-    const actual = intern.getId;
+    const actual = intern.getId();
 
     expect(actual).toEqual(expected);
   });
@@ -48,7 +48,7 @@ describe("Intern", () => {
 
     const intern = new Intern(name, id, email);
 
-    const actual = intern.generateSchool;
+    const actual = intern.generateSchool();
 
     expect(actual).toEqual(expected);
   });
@@ -58,7 +58,7 @@ describe("Intern", () => {
 
     const intern = new Intern(name, id, email);
 
-    const actual = intern.getRole;
+    const actual = intern.getRole();
 
     expect(actual).toEqual(expected);
   });
