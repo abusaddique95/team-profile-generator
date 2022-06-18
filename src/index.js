@@ -27,17 +27,6 @@ const init = async () => {
   );
   team.push(manager);
 
-  const createHeader = (string) => {
-    return;
-    `<header class="jumbotron m-2 p-3 bg-primary">
-    <div class="container">
-        <h1 class="display-4 text-center">${string}</h1>
-    </div>
-</header>`;
-  };
-
-  const createManagerCard = team;
-
   while (inProgress) {
     const select = await inquirer.prompt(selectionQuestions);
 
