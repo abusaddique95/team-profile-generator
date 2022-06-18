@@ -1,105 +1,42 @@
 const Intern = require("./Intern");
+const { name, id, email, role } = require("./Employee");
 
 describe("Intern", () => {
-  it("should be an instance of an intern", () => {
-    const name = "Bob";
-    const email = "Bob@gmail.com";
-    const id = "1";
-    const school = "university of wolverhampton";
-    intern = new Intern(name, id, email, school);
+  it("should create and instance of Intern", () => {
+    const expected = new Intern({
+      name: "Bob Smith",
+      email: "bobsmith@bob.com",
+      id: "123",
+    });
 
-    const expected = intern;
-    const actual = new Intern(name, id, email, school);
-    expect(actual).toEqual(expected);
+    expect(expected).toBeInstanceOf(Intern);
   });
 
-  it("should return intern name", () => {
-    const expected = "Bob";
+  it("should expect a name of Intern", () => {
+    const expected = new Intern({ name: "Bob Smith" });
 
-    const name = "Bob";
-    const email = "Bob@gmail.com";
-    const id = "1";
-    const school = "university of wolverhampton";
-
-    const intern = new Intern(name, id, email, school);
-
-    const actual = intern.getName();
-    expect(actual).toEqual(expected);
+    const actual = expected.getName();
+    expect(actual).toEqual(expected.name);
   });
 
-  it("should return intern email", () => {
-    const expected = "Bob@gmail.com";
+  it("should expect a valid id", () => {
+    const expected = new Intern({ id: "123" });
 
-    const name = "Bob";
-    const email = "Bob@gmail.com";
-    const id = "1";
-    const school = "university of wolverhampton";
-
-    const intern = new Intern(
-      "Bob",
-      "1",
-      "Bob@gmail.com",
-      "university of wolverhampton"
-    );
-
-    const actual = intern.getEmail();
-    expect(actual).toEqual(expected);
+    const actual = expected.getId();
+    expect(actual).toEqual(expected.id);
   });
 
-  it("should return intern ID", () => {
-    const expected = "1";
+  it("should expect a valid email", () => {
+    const expected = new Intern({ email: "bobsmith@bob.com" });
 
-    const name = "Bob";
-    const email = "Bob@gmail.com";
-    const id = "1";
-    const school = "university of wolverhampton";
-
-    const intern = new Intern(
-      "Bob",
-      "1",
-      "Bob@gmail.com",
-      "university of wolverhampton"
-    );
-
-    const actual = intern.getId();
-    expect(actual).toEqual(expected);
+    const actual = expected.getEmail();
+    expect(actual).toEqual(expected.email);
   });
 
-  it("should return intern school", () => {
-    const expected = "university of wolverhampton";
+  it("should expect a valid role", () => {
+    const expected = new Intern({ role: "Intern" });
 
-    const name = "Bob";
-    const email = "Bob@gmail.com";
-    const id = "1";
-    const school = "university of wolverhampton";
-
-    const intern = new Intern(
-      "Bob",
-      "1",
-      "Bob@gmail.com",
-      "university of wolverhampton"
-    );
-
-    const actual = intern.generateSchool();
-    expect(actual).toEqual(expected);
-  });
-
-  it("should return intern", () => {
-    const expected = "intern";
-
-    const name = "Bob";
-    const email = "Bob@gmail.com";
-    const id = "1";
-    const school = "university of wolverhampton";
-
-    const intern = new Intern(
-      "Bob",
-      "1",
-      "Bob@gmail.com",
-      "university of wolverhampton"
-    );
-
-    const actual = intern.getRole();
-    expect(actual).toEqual(expected);
+    const actual = expected.getRole();
+    expect(actual).toEqual(expected.role);
   });
 });

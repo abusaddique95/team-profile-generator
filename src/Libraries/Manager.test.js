@@ -1,85 +1,42 @@
 const Manager = require("./Manager");
 
-// describe("Manager", () => {
-//   it("should be an instance of a manager", () => {
-//     const name = "Bob";
-//     const email = "Bob@gmail.com";
-//     const id = "12";
-//     const officeNumber = "4567";
-
-//     const expected = Manager;
-//     const actual = new Manager(name, id, email);
-//     expect(actual).toEqual(expected);
-//   });
-
 describe("Manager", () => {
-  it("should return manager name", () => {
-    const expected = "Bob Smith";
+  it("should get the instance of new Manager", () => {
+    const expected = new Manager({
+      name: "Bob",
+      id: "123",
+      email: "bob@email.com",
+    });
 
-    const name = "Bob";
-    const email = "Bob@gmail.com";
-    const id = "12";
-    const officeNumber = "4567";
-
-    const manager = new Manager("bob", "bob@gmail.com", "12", "4567");
-
-    const actual = manager.getName();
-
-    expect(actual).toEqual(expected);
+    expect(expected).toBeInstanceOf(Manager);
   });
 
-  it("should return manager email", () => {
-    const expected = "Bob@gmail.com";
+  it("should get role of Manager", () => {
+    const expected = new Manager({ role: "Manager" });
 
-    const name = "Bob";
-    const email = "Bob@gmail.com";
-    const id = "12";
-    const officeNumber = "4567";
-
-    const manager = new Manager("bob", "bob@gmail.com", "12", "4567");
-
-    const actual = manager.getEmail();
-
-    expect(actual).toEqual(expected);
+    const actual = expected.getRole();
+    expect(actual).toEqual(expected.role);
   });
 
-  it("should return manager ID", () => {
-    const expected = "12";
+  // - should return the expected name
+  it("should return the expected name", () => {
+    const expected = new Manager({ name: "Bob" });
 
-    const name = "Bob";
-    const email = "Bob@gmail.com";
-    const id = "12";
-    const officeNumber = "4567";
-
-    const manager = new Manager("bob", "bob@gmail.com", "12", "4567");
-
-    const actual = manager.getId();
-
-    expect(actual).toEqual(expected);
+    const actual = expected.getName();
+    expect(actual).toEqual(expected.name);
   });
 
-  it("should return office number", () => {
-    const expected = "4567";
-
-    const name = "Bob";
-    const email = "Bob@gmail.com";
-    const id = "12";
-    const officeNumber = "4567";
-
-    const manager = new Manager("bob", "bob@gmail.com", "12", "4567");
-
-    const actual = manager.generateOfficeNumber();
-
-    expect(actual).toEqual(expected);
+  // - should return the expected id
+  it("should return the expected id", () => {
+    const expected = new Manager({ id: "123" });
+    const actual = expected.getId();
+    expect(actual).toEqual(expected.id);
   });
 
-  // it("should return manager", () => {
-  //   const expected = "manager";
-
-  //   const manager = new Manager(name, id, email);
-
-  //   const actual = Manager.getRole();
-
-  //   expect(actual).toEqual(expected);
-  // });
+  // - should return the expected email
+  it("should get the email of the employee", () => {
+    const expected = new Manager({ email: "bob@email.com" });
+    const actual = expected.getEmail();
+    expect(actual).toEqual(expected.email);
+  });
 });

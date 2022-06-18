@@ -1,53 +1,42 @@
 const Engineer = require("./Engineer");
+const { name, id, email, role } = require("./Employee");
 
 describe("Engineer", () => {
-  it("should be an instance of an Engineer", () => {
-    const data = {
-      name: "Alice",
-      email: "Alice@gmail.com",
-      id: "111",
-      username: "alicesmith55",
-    };
+  it("should create and instance of Engineer", () => {
+    const expected = new Engineer({
+      name: "Bob Smith",
+      email: "bobsmith@bob.com",
+      id: "123",
+    });
 
-    engineer = new Engineer(data);
-
-    const expected = engineer;
-    const actual = new Engineer(data);
-    expect(actual).toEqual(expected);
-  });
-});
-
-describe("Engineer", () => {
-  it("should return engineer name", () => {
-    const expected = "Alice";
-    const name = "Alice";
-
-    const engineer = new Engineer(data);
-    const actual = engineer.getName();
-    expect(actual).toEqual(expected);
+    expect(expected).toBeInstanceOf(Engineer);
   });
 
-  it("should return engineer id", () => {
-    const expected = "111";
+  it("should expect a name of Engineer", () => {
+    const expected = new Engineer({ name: "Bob Smith" });
 
-    const engineer = new Engineer(data);
-    const actual = engineer.getId();
-    expect(actual).toEqual(expected);
+    const actual = expected.getName();
+    expect(actual).toEqual(expected.name);
   });
 
-  it("should return engineer email", () => {
-    const expected = "Alice";
+  it("should expect a valid id", () => {
+    const expected = new Engineer({ id: "123" });
 
-    const engineer = new Engineer(data);
-    const actual = engineer.getEmail();
-    expect(actual).toEqual(expected);
+    const actual = expected.getId();
+    expect(actual).toEqual(expected.id);
   });
 
-  it("should return engineer role", () => {
-    const expected = "Alice";
+  it("should expect a valid email", () => {
+    const expected = new Engineer({ email: "bobsmith@bob.com" });
 
-    const engineer = new Engineer(data);
-    const actual = engineer.githubUsername();
-    expect(actual).toEqual(expected);
+    const actual = expected.getEmail();
+    expect(actual).toEqual(expected.email);
+  });
+
+  it("should expect a valid role", () => {
+    const expected = new Engineer({ role: "Engineer" });
+
+    const actual = expected.getRole();
+    expect(actual).toEqual(expected.role);
   });
 });
