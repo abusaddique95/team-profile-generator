@@ -7,3 +7,7 @@ A command line application that allows you to generate a rendered HTML page with
 when you click on an email it will take you to email application.
 
 when you click on a github link it will take you to the users github page.
+
+## Screenshots
+
+![screenshot](/assets/images/tests.png)
