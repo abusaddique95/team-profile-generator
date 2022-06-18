@@ -45,11 +45,9 @@ const generateIntern = (Internintern
         <li class="list-group-item">${intern
             .id}</li>
         <li class="list-group-item">Email:
-            <a href="mailto:${intern
-                .email} target="_blank" class="card-link">${intern
+            <a href="mailto:${intern.email} target="_blank" class="card-link">${intern
                 .email}</a>
-        <li class="list-group-item">${intern
-            .school}</li>
+        <li class="list-group-item">${intern.school}</li>
     </ul>
 </div>`;
   }
