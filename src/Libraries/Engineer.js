@@ -35,6 +35,4 @@ class Engineer extends Employee {
   }
 }
 
-console.log(generateEngineerHTML);
-
 module.exports = Engineer;

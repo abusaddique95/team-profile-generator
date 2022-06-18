@@ -1,65 +1,42 @@
 const Employee = require("./Employee");
-const { name, id, email, role } = require("./Employee")
-
-
+const { name, id, email, role } = require("./Employee");
 
 describe("Employee", () => {
-    it("should create and instance of Employee", () => {
-        const name = "Bob Smith";
-        const email = "bobsmith@bob.com"
-        const id = "1"
-
-        const expected = employee;
-        const actual = new Employee(name, id, email);
-        expect(actual).toEqual(expected);
-    });
-    
-
-    it("should expect a name of employee", () => {
-        const expected = "Bob Smith"
-
-        const name = "Bob Smith";
-        const email = "bobsmith@bob.com"
-        const id = "1"
-        const employee = new Employee(name, email id)
-        
-        const actual = employee.getName();
-        expect(actual).toEqual(expected);
+  it("should create and instance of Employee", () => {
+    const expected = new Employee({
+      name: "Bob Smith",
+      email: "bobsmith@bob.com",
+      id: "123",
     });
 
-    it("should expect a valid id", () => {
-        const expected = "123"
+    expect(expected).toBeInstanceOf(Employee);
+  });
 
-        const name = "Bob Smith";
-        const email = "bobsmith@bob.com"
-        const id = "123"
-        const employee = new Employee(name, email id)
-        
-        const actual = employee.getId();
-        expect(actual).toEqual(expected);
-    });
+  it("should expect a name of employee", () => {
+    const expected = new Employee({ name: "Bob Smith" });
 
-    it("should expect a valid email", () => {
-        const expected = "123"
+    const actual = expected.getName();
+    expect(actual).toEqual(expected.name);
+  });
 
-        const name = "Bob Smith";
-        const email = "bobsmith@bob.com"
-        const id = "123"
-        const employee = new Employee(name, email id)
-        
-        const actual = employee.getEmail();
-        expect(actual).toEqual(expected);
-    });
+  it("should expect a valid id", () => {
+    const expected = new Employee({ id: "123" });
 
-    it("should expect a valid role", () => {
-        const expected = "Employee"
+    const actual = expected.getId();
+    expect(actual).toEqual(expected.id);
+  });
 
-        const name = "Bob Smith";
-        const email = "bobsmith@bob.com"
-        const id = "123"
-        const employee = new Employee(name, email id)
-        
-        const actual = employee.getRole();
-        expect(actual).toEqual(expected);
-    });
-}
+  it("should expect a valid email", () => {
+    const expected = new Employee({ email: "bobsmith@bob.com" });
+
+    const actual = expected.getEmail();
+    expect(actual).toEqual(expected.email);
+  });
+
+  it("should expect a valid role", () => {
+    const expected = new Employee({ role: "Employee" });
+
+    const actual = expected.getRole();
+    expect(actual).toEqual(expected.role);
+  });
+});
