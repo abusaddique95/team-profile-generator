@@ -1,10 +1,13 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 const path = require("path");
+const { generateHTML } = require("./Utils/createHTML");
 
 const Manager = require("./libraries/Manager");
 const Engineer = require("./libraries/Engineer");
 const Intern = require("./libraries/Intern");
+
+const team = [];
 
 const {
   engineerQuestions,
@@ -12,7 +15,7 @@ const {
   managerQuestions,
   internQuestions,
   selectionQuestions,
-} = require("./utils/questions");
+} = require("./Utils/team-questions");
 
 let inProgress = true;
 
@@ -25,6 +28,7 @@ const init = async () => {
     managerAnswers.email,
     managerAnswers.officeNumber
   );
+  console.log(manager.getEmail());
   team.push(manager);
 
   while (inProgress) {
@@ -39,7 +43,7 @@ const init = async () => {
         engineerAnswers.github
       );
       team.push(engineer);
-    } else if (selection.proceed === "Add an intern") {
+    } else if (select.proceed === "Add an intern") {
       const internAnswers = await inquirer.prompt(internQuestions);
 
       const intern = new Intern(
@@ -54,7 +58,7 @@ const init = async () => {
     }
   }
 
-  const HtmlGenerator = generatedHtml(team);
+  const HtmlGenerator = generateHTML(team);
   const filePath = path.join(__dirname, "../dis/index.html");
 
   fs.writeFileSync(filePath, HtmlGenerator);

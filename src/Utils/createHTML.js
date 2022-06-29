@@ -1,7 +1,5 @@
-
-
-const generateManager = (managermanager) {
-    return `<div class="card m-3 bg-warning" style="width: 18rem;">
+const generateManager = (manager) => {
+  return `<div class="card m-3 bg-warning" style="width: 18rem;">
     <div class="card-body text-center">
         <h5 class="card-title">${manager.name}</h5>
         <h6>Manager</h6>
@@ -13,61 +11,53 @@ const generateManager = (managermanager) {
         <li class="list-group-item">${manager.officeNumber}</li>
     </ul>
 </div>`;
-  }
+};
 
- const generateEngineer = (engineer) {
-    return `<div class="card-body text-center">
+const generateEngineer = (engineer) => {
+  return `<div class="card-body text-center">
         <h5 class="card-title">${engineer.name}</h5>
         <h6>Manager</h6>
     </div>
     <ul class="list-group list-group-flush">
         <li class="list-group-item">${engineer.id}</li>
         <li class="list-group-item">Email:
-            <a href="mailto:${engineer
-.email}" target="_blank" class="card-link">${engineer
-.email}</a>
+            <a href="mailto:${engineer.email}" target="_blank" class="card-link">${engineer.email}</a>
             <li class="list-group-item">Github</li>
             <a href="https://github.com/${engineer.githubUsername}" target="_blank" class="card-link">https://github.com/${this.githubUsername}</a> 
     </ul>
 </div>`;
-  }
-}
+};
 
-const generateIntern = (Internintern
-    ) {
-    return `<div class="card m-3 bg-success" style="width: 18rem;">
+const generateIntern = (intern) => {
+  return `<div class="card m-3 bg-success" style="width: 18rem;">
     <div class="card-body text-center">
-        <h5 class="card-title">${intern
-            .name}</h5>
+        <h5 class="card-title">${intern.name}</h5>
         <h6>Manager</h6>
     </div>
     <ul class="list-group list-group-flush">
-        <li class="list-group-item">${intern
-            .id}</li>
+        <li class="list-group-item">${intern.id}</li>
         <li class="list-group-item">Email:
-            <a href="mailto:${intern.email} target="_blank" class="card-link">${intern
-                .email}</a>
+            <a href="mailto:${intern.email} target="_blank" class="card-link">${intern.email}</a>
         <li class="list-group-item">${intern.school}</li>
     </ul>
 </div>`;
-  }
-}
+};
 
 // map function
 
-const createHTML = (teamName, teamMember) => {
-    const generatedCards = {
-        manager: generateManager(teamMember)
-        intern: teamMember.intern.map(generateIntern),
-        engineer: teamMember.engineer.map(generateEngineer),
-     teamName,
-    };
+// const createHTML = (teamName, teamMember) => {
+//     const generatedCards = {
+//         manager: generateManager(teamMember)
+//         intern: teamMember.intern.map(generateIntern),
+//         engineer: teamMember.engineer.map(generateEngineer),
+//      teamName,
+//     };
 
-    return generatedCards;
-};
+//     return generatedCards;
+// };
 
-const generateHTML = (Data) => {
-    return `<!DOCTYPE html>
+const generateHTML = (data) => {
+  return `<!DOCTYPE html>
     <html lang="en">
     
     <head>
@@ -86,14 +76,13 @@ const generateHTML = (Data) => {
                 <h1 class="display-4 text-center">${data.teamName}</h1>
             </div>
         </header>
-        ${Data.manager}
-        ${Data.interns.join("")}
-        ${Data.engineers.join("")}
+        ${data.manager}
+        ${data.interns.join("")}
+        ${data.engineers.join("")}
         </body>
-        </html>`
+        </html>`;
 };
 
 module.exports = {
-    createHTML,
-    generateHTML,
-  };
+  generateHTML,
+};
