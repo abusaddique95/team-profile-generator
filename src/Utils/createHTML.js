@@ -73,12 +73,12 @@ const generateHTML = (data) => {
     
         <header class="jumbotron m-2 p-3 bg-primary">
             <div class="container">
-                <h1 class="display-4 text-center">${data.teamName}</h1>
+                <h1 class="display-4 text-center">Team Roster</h1>
             </div>
         </header>
-        ${data.manager}
-        ${data.interns.join("")}
-        ${data.engineers.join("")}
+        ${data.filter((employee) => employee.role === "Manager").join()}
+        ${data.filter((employee) => employee.role === "Intern").join("")}
+        ${data.filter((employee) => employee.role === "Engineer").join("")}
         </body>
         </html>`;
 };

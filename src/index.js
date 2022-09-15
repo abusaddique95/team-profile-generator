@@ -59,7 +59,7 @@ const init = async () => {
   }
 
   const HtmlGenerator = generateHTML(team);
-  const filePath = path.join(__dirname, "../dis/index.html");
+  const filePath = path.join(__dirname, "../dist/index.html");
 
   fs.writeFileSync(filePath, HtmlGenerator);
 };

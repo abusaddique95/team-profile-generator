@@ -19,7 +19,7 @@ class Engineer extends Employee {
 
   // render the HTML
 
-  generateEngineerHTML() {
+  toString() {
     return `<div class="card-body text-center">
         <h5 class="card-title">${this.name}</h5>
         <h6>Manager</h6>

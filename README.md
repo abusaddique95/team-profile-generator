@@ -1,4 +1,4 @@
-## Team Profile Generator 
+np## Team Profile Generator
 
 ## Description
 
@@ -8,6 +8,16 @@ when you click on an email it will take you to email application.
 
 when you click on a github link it will take you to the users github page.
 
-## Screenshots
+## Demo
 
-![screenshot](/assets/images/tests.png)
+https://drive.google.com/file/d/1oefTOivRglJGq3U9tuz8ibkP3DdZwC3v/view
+
+## Usage
+
+```
+npm install
+```
+
+```
+npm run start
+```

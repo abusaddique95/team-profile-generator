@@ -19,7 +19,7 @@ class Intern extends Employee {
 
   // render the HTML
 
-  generateInternHTML() {
+  toString() {
     return `<div class="card m-3 bg-success" style="width: 18rem;">
     <div class="card-body text-center">
         <h5 class="card-title">${this.name}</h5>
